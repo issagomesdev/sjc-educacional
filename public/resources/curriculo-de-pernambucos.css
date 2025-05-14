@@ -1,0 +1,71 @@
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 58px 10px !important;
+}
+
+.dropdown {
+    position: relative !important;
+    display: inline-block;
+    right: 0;
+}
+
+.btn-left, .btn-right {
+    left: 0;
+    position: absolute;
+    top: -30px;
+}
+
+.dshow {
+    position: relative;
+    margin-top: 0px;
+    margin-left: -10rem;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+button.btn.btn-m {
+    color: #fff;
+    background-color: #5cc975;
+    border-color: #5cc975;
+}
+
+a.c-sidebar-nav-link {
+    color: #000000c7;
+}
+
+.card-top {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    min-height: 1px;
+    padding: 1.25rem;
+    display: flex;
+}
+
+a.c-sidebar-nav-link.c-active {
+    color: #2eb85c;
+}
+
+@media (min-width: 821px) and (max-width: 1359px) {
+    .container-fluid {
+        width: 90%;
+        left: -50px;
+      }
+  }
+
+
+    @media (min-width: 1360px) and (max-width: 1700px) {
+        .container-fluid {
+            width: 95%;
+            left: -50px;
+        }
+  }
+
+  @media (min-width: 1701px) {
+      .container-fluid {
+          width: 95%;
+          left: -30px;
+      }
+}

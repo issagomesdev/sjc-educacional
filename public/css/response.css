@@ -1,0 +1,26 @@
+@media only screen
+   and (max-device-width: 800px) {
+
+     .contein4 {
+         display: block;
+     }
+
+     .card3 {
+    position: relative;
+    display: -ms-flexbox;
+    display: block;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+    margin-left: 0rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0px solid;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    border-color: #d8dbe0;
+}
+
+
+}

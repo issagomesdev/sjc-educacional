@@ -1,0 +1,130 @@
+div#DataTables_Table_0_wrapper {
+    overflow: hidden !important;
+}
+
+.btn-submit {
+    width: 200px;
+    height: 30px;
+    margin-left: -10px;
+    background-color: transparent;
+    border: none;
+}
+
+a.btn.buttons-collection.buttons-colvis.btn-default {
+    padding: 0px 0px 0px 0px;
+    width: 0%;
+    opacity: 0%;
+    margin: 210px 0px 0px 0px;
+    position: absolute;
+}
+
+a.btn.btn-xs.btn-m {
+    color: #fff;
+    background-color: #5cc975;
+    border-color: #5cc975;
+    height: 25px;
+}
+
+button.btn.btn-m {
+    color: #fff;
+    background-color: #5cc975;
+    border-color: #5cc975;
+}
+
+a.c-sidebar-nav-link {
+    color: #000000c7;
+}
+
+.card-top {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    min-height: 1px;
+    padding: 1.25rem;
+    display: flex;
+}
+
+a.c-sidebar-nav-link.c-active {
+    color: #2eb85c;
+}
+
+.btn-publi {
+    color: #fff;
+    background-color: #2eb85c;
+    border-color: #2eb85c;
+}
+
+.btn-xpubli {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-xaprov {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger {
+    display: none;
+}
+
+.table td, .table th {
+    font-size: 0.8125rem;
+    white-space: none !important;
+}
+
+div.dataTables_scrollBody table {
+    border-top: none;
+    margin-top: 1px !important;
+    margin-left: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+}
+
+table.dataTable tbody td {
+    padding: 50px 15px;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: -2px;
+    margin-right: -200px !important;
+}
+
+.btn-left, .btn-right {
+    position: absolute;
+    top: 2.5em;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 1px 1px 0px 10px;
+    border-bottom: 0px solid #111;
+}
+
+.btn-right {
+    right: 0;
+    margin-right: -20px;
+}
+
+div.dataTables_scrollBody {
+    overflow: hidden !important;
+}
+
+.dshow {
+display: block !important;
+position: absolute !important;
+margin-top: 0px;
+right: 30px;
+background-color: #f9f9f9;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}

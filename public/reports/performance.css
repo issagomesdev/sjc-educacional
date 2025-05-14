@@ -1,0 +1,75 @@
+.lab {
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+table.table.head.table-bordered.table-striped.table-hover.datatable {
+    margin-bottom: 0px;
+}
+
+.table-bordered, .table-bordered td, .table-bordered th {
+    border: 0px solid;
+    border-color: rgb(255 255 255 / 70%);
+}
+
+.send {
+    margin-top: 18.5px;
+    margin-left: 5px;
+}
+
+.variavel {
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+.card-icons {
+    width: 20rem;
+    height: 10rem;
+}
+
+.cards-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card-select {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selecionar {
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+.grapic {
+    padding: 1rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    width: 100%;
+}
+
+.apexcharts-canvas {
+    position: relative;
+    user-select: none;
+}
+
+div#chart {
+    height: 400px !important;
+}
+
+.table {
+    margin-bottom: 4rem;
+    margin-bottom: 1rem;
+    color: #4f5d73;
+    width: 50%;
+}
+
+.grapic-area {
+    display: flex;
+}

@@ -1,0 +1,377 @@
+<?php
+
+Route::redirect('/', '/login');
+Route::get('/home', function () {
+    if (session('status')) {
+        return redirect()->route('admin.home')->with('status', session('status'));
+    }
+
+    return redirect()->route('admin.home');
+});
+
+//info
+
+Route::get('sjc-educacional', function () {
+  return view('sjc-educacional');
+})->name('sjc.educacional');
+
+//register
+
+Auth::routes(['register' => false]);
+
+//prefix
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+
+	// relatorios
+    Route::get('reports', "ReportsController@index")->name("reports");
+	Route::get('reports/usuarios', "ReportsController@Usuarios")->name("reports.usuarios");
+	Route::get('reports/teams', "ReportsController@teams")->name("reports.teams");
+	Route::get('reports/profissionais', "ReportsController@profissionais")->name("reports.profissionais");
+	Route::get('reports/estudantes', "ReportsController@estudantes")->name("reports.estudantes");
+	Route::get('reports/turmas', "ReportsController@turmas")->name("reports.turmas");
+	Route::get('reports/desempenho', "ReportsController@desempenho")->name("reports.desempenho");
+
+
+    // Permissions
+    Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
+    Route::resource('permissions', 'PermissionsController');
+
+    // Roles
+    Route::delete('roles/destroy', 'RolesController@massDestroy')->name('roles.massDestroy');
+    Route::resource('roles', 'RolesController');
+
+    // Users
+    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+    Route::post('users/media', 'UsersController@storeMedia')->name('users.storeMedia');
+    Route::post('users/ckmedia', 'UsersController@storeCKEditorImages')->name('users.storeCKEditorImages');
+    Route::resource('users', 'UsersController');
+
+    // Task Status
+    Route::delete('task-statuses/destroy', 'TaskStatusController@massDestroy')->name('task-statuses.massDestroy');
+    Route::resource('task-statuses', 'TaskStatusController');
+
+    // Task Tag
+    Route::delete('task-tags/destroy', 'TaskTagController@massDestroy')->name('task-tags.massDestroy');
+    Route::resource('task-tags', 'TaskTagController');
+
+    // Task
+    Route::delete('tasks/destroy', 'TaskController@massDestroy')->name('tasks.massDestroy');
+    Route::post('tasks/media', 'TaskController@storeMedia')->name('tasks.storeMedia');
+    Route::post('tasks/ckmedia', 'TaskController@storeCKEditorImages')->name('tasks.storeCKEditorImages');
+    Route::resource('tasks', 'TaskController');
+
+    // Tasks Calendar
+    Route::resource('tasks-calendars', 'TasksCalendarController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // User Alerts
+    Route::get("user-alerts/option", "UserAlertsController@option")->name("user-alerts.option");
+    Route::delete('user-alerts/destroy', 'UserAlertsController@massDestroy')->name('user-alerts.massDestroy');
+    Route::post('user-alerts/media', 'UserAlertsController@storeMedia')->name('user-alerts.storeMedia');
+    Route::post('user-alerts/ckmedia', 'UserAlertsController@storeCKEditorImages')->name('user-alerts.storeCKEditorImages');
+    Route::get('user-alerts/read', 'UserAlertsController@read');
+    Route::resource('user-alerts', 'UserAlertsController');
+
+    // Team
+    Route::delete('teams/destroy', 'TeamController@massDestroy')->name('teams.massDestroy');
+    Route::resource('teams', 'TeamController');
+
+    // Audit Logs
+    Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
+
+    // Materias
+    Route::delete('materia/destroy', 'MateriasController@massDestroy')->name('materia.massDestroy');
+    Route::resource('materia', 'MateriasController');
+
+    // Desempenho
+    Route::delete('desempenhos/destroy', 'DesempenhoController@massDestroy')->name('desempenhos.massDestroy');
+    Route::resource('desempenhos', 'DesempenhoController');
+
+    // Turmas
+    Route::delete('turmas/destroy', 'TurmasController@massDestroy')->name('turmas.massDestroy');
+    Route::resource('turmas', 'TurmasController');
+
+    // Quadro De Horarios
+    Route::delete('quadro-de-horarios/destroy', 'QuadroDeHorariosController@massDestroy')->name('quadro-de-horarios.massDestroy');
+    Route::resource('quadro-de-horarios', 'QuadroDeHorariosController');
+
+        // Banco De Aulas
+	Route::get("aulas/propostas", "BancoDeAulasController@propostas")->name("aulas.propostas");
+    Route::get("aulas/propostas/atualizar", "BancoDeAulasController@atualizar")->name("aulas.propostas.atualizar");
+    Route::post('aulas/propostas/up', 'BancoDeAulasController@up')->name('aulas.propostas.up');
+	Route::post('aulas/propostas/upb', 'BancoDeAulasController@upb')->name('aulas.propostas.upb');
+    Route::delete('banco-de-aulas/destroy', 'BancoDeAulasController@massDestroy')->name('banco-de-aulas.massDestroy');
+    Route::post('banco-de-aulas/media', 'BancoDeAulasController@storeMedia')->name('banco-de-aulas.storeMedia');
+    Route::post('banco-de-aulas/ckmedia', 'BancoDeAulasController@storeCKEditorImages')->name('banco-de-aulas.storeCKEditorImages');
+    Route::resource('banco-de-aulas', 'BancoDeAulasController');
+
+    // Presenca Eletiva
+
+    Route::get("presenca-eletivas/refresh", "PresencaEletivaController@refresh")->name("presenca-eletivas.refresh");
+    Route::get("presenca-eletivas/view", "PresencaEletivaController@view")->name("presenca-eletivas.view");
+    Route::delete('presenca-eletivas/destroy', 'PresencaEletivaController@massDestroy')->name('presenca-eletivas.massDestroy');
+    Route::resource('presenca-eletivas', 'PresencaEletivaController');
+
+    // Meus Alunos
+    Route::delete('meus-alunos/destroy', 'MeusAlunosController@massDestroy')->name('meus-alunos.massDestroy');
+    Route::resource('meus-alunos', 'MeusAlunosController');
+
+    // Minhas Turmas
+    Route::delete('minhas-turmas/destroy', 'MinhasTurmasController@massDestroy')->name('minhas-turmas.massDestroy');
+    Route::resource('minhas-turmas', 'MinhasTurmasController');
+
+    // Minhas Aulas
+    Route::delete('minhas-aulas/destroy', 'MinhasAulasController@massDestroy')->name('minhas-aulas.massDestroy');
+    Route::resource('minhas-aulas', 'MinhasAulasController');
+
+    // Vagas
+    Route::delete('vagas/destroy', 'VagasController@massDestroy')->name('vagas.massDestroy');
+    Route::resource('vagas', 'VagasController');
+
+    // Meu Desempenho
+    Route::delete('meu-desempenhos/destroy', 'MeuDesempenhoController@massDestroy')->name('meu-desempenhos.massDestroy');
+    Route::resource('meu-desempenhos', 'MeuDesempenhoController');
+
+    // Cadastrar Biblioteca
+    Route::delete('cadastrar-bibliotecas/destroy', 'CadastrarBibliotecaController@massDestroy')->name('cadastrar-bibliotecas.massDestroy');
+    Route::resource('cadastrar-bibliotecas', 'CadastrarBibliotecaController');
+
+	// Relatorios Da Biblioteca
+    Route::delete('relatorios-da-bibliotecas/destroy', 'RelatoriosDaBibliotecaController@massDestroy')->name('relatorios-da-bibliotecas.massDestroy');
+	Route::get('relatorios-da-bibliotecas/livros', 'RelatoriosDaBibliotecaController@livros')->name('relatorios-da-bibliotecas.livros');
+	Route::get('relatorios-da-bibliotecas/users', 'RelatoriosDaBibliotecaController@users')->name('relatorios-da-bibliotecas.users');
+	Route::get('relatorios-da-bibliotecas/emprestimos', 'RelatoriosDaBibliotecaController@emprestimos')->name('relatorios-da-bibliotecas.emprestimos');
+    Route::get('relatorios-da-bibliotecas', 'RelatoriosDaBibliotecaController@index')->name('relatorios-da-bibliotecas.index');
+
+    // Cadastrar Livro
+    Route::delete('cadastrar-livros/destroy', 'CadastrarLivroController@massDestroy')->name('cadastrar-livros.massDestroy');
+    Route::resource('cadastrar-livros', 'CadastrarLivroController');
+
+	 // Usuarios Da Biblioteca
+    Route::delete('usuarios-da-bibliotecas/destroy', 'UsuariosDaBibliotecaController@massDestroy')->name('usuarios-da-bibliotecas.massDestroy');
+    Route::resource('usuarios-da-bibliotecas', 'UsuariosDaBibliotecaController');
+
+    // Emprestimos E Devolucoes
+    Route::delete('emprestimos-e-devolucos/destroy', 'EmprestimosEDevolucoesController@massDestroy')->name('emprestimos-e-devolucos.massDestroy');
+	Route::get('emprestimos-e-devolucos/situacao/up', 'EmprestimosEDevolucoesController@upSituacao')->name('emprestimos-e-devolucos.situacao-up');
+	Route::get("emprestimos-e-devolucos/situacao", "EmprestimosEDevolucoesController@situacao")->name("emprestimos-e-devolucos.situacao");
+    Route::resource('emprestimos-e-devolucos', 'EmprestimosEDevolucoesController');
+
+    // Meu Boletim
+    Route::delete('meu-boletims/destroy', 'MeuBoletimController@massDestroy')->name('meu-boletims.massDestroy');
+    Route::resource('meu-boletims', 'MeuBoletimController');
+
+    // Cadastrar Motorista
+    Route::delete('cadastrar-motorista/destroy', 'CadastrarMotoristaController@massDestroy')->name('cadastrar-motorista.massDestroy');
+    Route::post('cadastrar-motorista/media', 'CadastrarMotoristaController@storeMedia')->name('cadastrar-motorista.storeMedia');
+    Route::post('cadastrar-motorista/ckmedia', 'CadastrarMotoristaController@storeCKEditorImages')->name('cadastrar-motorista.storeCKEditorImages');
+    Route::resource('cadastrar-motorista', 'CadastrarMotoristaController');
+
+    // Cadastrarveiculo
+    Route::delete('cadastrarveiculos/destroy', 'CadastrarveiculoController@massDestroy')->name('cadastrarveiculos.massDestroy');
+    Route::resource('cadastrarveiculos', 'CadastrarveiculoController');
+
+    // Documentos
+    Route::delete('documentos/destroy', 'DocumentosController@massDestroy')->name('documentos.massDestroy');
+    Route::post('documentos/media', 'DocumentosController@storeMedia')->name('documentos.storeMedia');
+    Route::post('documentos/ckmedia', 'DocumentosController@storeCKEditorImages')->name('documentos.storeCKEditorImages');
+    Route::resource('documentos', 'DocumentosController');
+
+    // Rotas
+    Route::delete('rota/destroy', 'RotasController@massDestroy')->name('rota.massDestroy');
+    Route::post('rota/media', 'RotasController@storeMedia')->name('rota.storeMedia');
+    Route::post('rota/ckmedia', 'RotasController@storeCKEditorImages')->name('rota.storeCKEditorImages');
+    Route::resource('rota', 'RotasController');
+
+    // Minhas Materias
+    Route::delete('minhas-materia/destroy', 'MinhasMateriasController@massDestroy')->name('minhas-materia.massDestroy');
+    Route::resource('minhas-materia', 'MinhasMateriasController');
+
+    // Banco De Projetos
+	Route::get("projetos/propostas", "BancoDeProjetosController@propostas")->name("projetos.propostas");
+    Route::get("projetos/propostas/atualizar", "BancoDeProjetosController@atualizar")->name("projetos.propostas.atualizar");
+    Route::post('projetos/propostas/up', 'BancoDeProjetosController@up')->name('projetos.propostas.up');
+	Route::post('projetos/propostas/upb', 'BancoDeProjetosController@upb')->name('projetos.propostas.upb');
+    Route::delete('banco-de-projetos/destroy', 'BancoDeProjetosController@massDestroy')->name('banco-de-projetos.massDestroy');
+    Route::post('banco-de-projetos/media', 'BancoDeProjetosController@storeMedia')->name('banco-de-projetos.storeMedia');
+    Route::post('banco-de-projetos/ckmedia', 'BancoDeProjetosController@storeCKEditorImages')->name('banco-de-projetos.storeCKEditorImages');
+    Route::resource('banco-de-projetos', 'BancoDeProjetosController');
+
+    // Dispensa
+    Route::delete('dispensas/destroy', 'DispensaController@massDestroy')->name('dispensas.massDestroy');
+    Route::resource('dispensas', 'DispensaController');
+
+    // Transferencias
+    Route::delete('transferencia/destroy', 'TransferenciasController@massDestroy')->name('transferencia.massDestroy');
+	Route::post('transferencia/turma', 'TransferenciasController@upTurma')->name('transferencia.turma.up');
+	Route::post('transferencia/interna', 'TransferenciasController@upInterna')->name('transferencia.interna.up');
+	Route::post('transferencia/externa', 'TransferenciasController@upExterna')->name('transferencia.externa.up');
+	Route::get('transferencia-recebidas', 'TransferenciasController@recebidas')->name('transferencia.recebidas');
+	Route::get('transferencia/export', 'TransferenciasController@export')->name('transferencia.export');
+	Route::post('transferencia/file-import', 'TransferenciasController@fileImport')->name('transferencia.file.import');
+    Route::resource('transferencia', 'TransferenciasController', ['except' => ['store'], ['update'], ['edit']]);
+
+    // Conteudos Curriculares
+    Route::delete('conteudos-curriculares/destroy', 'ConteudosCurricularesController@massDestroy')->name('conteudos-curriculares.massDestroy');
+    Route::post('conteudos-curriculares/media', 'ConteudosCurricularesController@storeMedia')->name('conteudos-curriculares.storeMedia');
+    Route::post('conteudos-curriculares/ckmedia', 'ConteudosCurricularesController@storeCKEditorImages')->name('conteudos-curriculares.storeCKEditorImages');
+    Route::resource('conteudos-curriculares', 'ConteudosCurricularesController');
+
+    // Cadastro
+    Route::get("cadastros/declaracao-de-matricula", "CadastroController@declaracao")->name("cadastros.declaracao");
+    Route::delete('cadastros/destroy', 'CadastroController@massDestroy')->name('cadastros.massDestroy');
+    Route::post('cadastros/media', 'CadastroController@storeMedia')->name('cadastros.storeMedia');
+    Route::post('cadastros/ckmedia', 'CadastroController@storeCKEditorImages')->name('cadastros.storeCKEditorImages');
+    Route::resource('cadastros', 'CadastroController');
+
+    // Planejamento Bimestral
+	  Route::post('planejamento-bimestrals/up', 'PlanejamentoBimestralController@up')->name('planejamento-bimestrals.up');
+    Route::get("planejamento-bimestrals/atualizar", "PlanejamentoBimestralController@atualizar")->name("planejamento-bimestrals.atualizar");
+    Route::delete('planejamento-bimestrals/destroy', 'PlanejamentoBimestralController@massDestroy')->name('planejamento-bimestrals.massDestroy');
+    Route::post('planejamento-bimestrals/media', 'PlanejamentoBimestralController@storeMedia')->name('planejamento-bimestrals.storeMedia');
+    Route::post('planejamento-bimestrals/ckmedia', 'PlanejamentoBimestralController@storeCKEditorImages')->name('planejamento-bimestrals.storeCKEditorImages');
+    Route::resource('planejamento-bimestrals', 'PlanejamentoBimestralController');
+
+    // Semaulas
+    Route::delete('semaulas/destroy', 'SemaulasController@massDestroy')->name('semaulas.massDestroy');
+    Route::post('semaulas/media', 'SemaulasController@storeMedia')->name('semaulas.storeMedia');
+    Route::post('semaulas/ckmedia', 'SemaulasController@storeCKEditorImages')->name('semaulas.storeCKEditorImages');
+    Route::resource('semaulas', 'SemaulasController');
+
+    // Deslocar
+    Route::get("deslocars/instituicao", "DeslocarController@instituicao")->name("deslocars.instituicao");
+    Route::delete('deslocars/destroy', 'DeslocarController@massDestroy')->name('deslocars.massDestroy');
+    Route::resource('deslocars', 'DeslocarController');
+
+    // Instalar
+    Route::delete('instalars/destroy', 'InstalarController@massDestroy')->name('instalars.massDestroy');
+    Route::resource('instalars', 'InstalarController');
+
+    // Boletins
+    Route::get("boletins/view", "BoletinsController@view")->name("boletins.view");
+	Route::get('boletins/pdf', "BoletinsController@pdf")->name("boletins.pdf");
+    Route::delete('boletins/destroy', 'BoletinsController@massDestroy')->name('boletins.massDestroy');
+    Route::resource('boletins', 'BoletinsController');
+
+    // Abrir E Encerrar Ano Letivo
+    Route::delete('abrir-e-encerrar-ano-letivos/destroy', 'AbrirEEncerrarAnoLetivoController@massDestroy')->name('abrir-e-encerrar-ano-letivos.massDestroy');
+    Route::post('abrir-e-encerrar-ano-letivos/up', 'AbrirEEncerrarAnoLetivoController@up')->name('abrir-e-encerrar-ano-letivos.up');
+	Route::post('abrir-e-encerrar-ano-letivos/insert', 'AbrirEEncerrarAnoLetivoController@insert')->name('abrir-e-encerrar-ano-letivos.insert');
+    Route::resource('abrir-e-encerrar-ano-letivos', 'AbrirEEncerrarAnoLetivoController');
+
+    // Matriculas
+    Route::delete('enturmacao/destroy', 'EnturmacaoController@massDestroy')->name('enturmacao.massDestroy');
+    Route::get('enturmacao', 'EnturmacaoController@index')->name('enturmacao.index');
+	Route::get('enturmacao/create', 'EnturmacaoController@create')->name('enturmacao.create');
+	Route::get('enturmacao/show', 'EnturmacaoController@show')->name('enturmacao.show');
+	Route::post('enturmacao/store', 'EnturmacaoController@store')->name('enturmacao.store');
+
+    // Rematricula
+    Route::delete('rematriculas/destroy', 'RematriculaController@massDestroy')->name('rematriculas.massDestroy');
+    Route::resource('rematriculas', 'RematriculaController');
+
+    // Notas
+   Route::post('nota/new', 'NotasController@new')->name('nota.new');
+   Route::post('nota/up', 'NotasController@up')->name('nota.up');
+   Route::post('nota/up/resultado', 'NotasController@newResultado')->name('nota.up-resultado');
+   Route::post('nota/new/mrecf', 'NotasController@newMrecf')->name('nota.new.mrecf');
+   Route::post('nota/up/mrecf', 'NotasController@upMrecf')->name('nota.up.mrecf');
+   Route::get("nota/refresh", "NotasController@refresh")->name("nota.refresh");
+   Route::get("nota/refresh/inf", "NotasController@refreshInf")->name("nota.refresh-inf");
+   Route::get("nota/view", "NotasController@view")->name("nota.view");
+   Route::get("nota/view/inf", "NotasController@viewInf")->name("nota.view-inf");
+   Route::delete('nota/destroy', 'NotasController@massDestroy')->name('nota.massDestroy');
+   Route::resource('nota', 'NotasController');
+
+    // Type
+    Route::delete('types/destroy', 'TypeController@massDestroy')->name('types.massDestroy');
+    Route::resource('types', 'TypeController');
+
+    // Tipo De Profissional
+    Route::delete('tipo-de-profissionals/destroy', 'TipoDeProfissionalController@massDestroy')->name('tipo-de-profissionals.massDestroy');
+    Route::resource('tipo-de-profissionals', 'TipoDeProfissionalController');
+
+    // Profissionais
+    Route::delete('profissionais/destroy', 'ProfissionaisController@massDestroy')->name('profissionais.massDestroy');
+    Route::post('profissionais/media', 'ProfissionaisController@storeMedia')->name('profissionais.storeMedia');
+    Route::post('profissionais/ckmedia', 'ProfissionaisController@storeCKEditorImages')->name('profissionais.storeCKEditorImages');
+    Route::resource('profissionais', 'ProfissionaisController');
+
+    // Team Type
+    Route::delete('team-types/destroy', 'TeamTypeController@massDestroy')->name('team-types.massDestroy');
+    Route::resource('team-types', 'TeamTypeController');
+
+    // Bncc
+    Route::delete('bnccs/destroy', 'BnccController@massDestroy')->name('bnccs.massDestroy');
+    Route::resource('bnccs', 'BnccController');
+
+    // Curriculo De Pernambuco
+    Route::delete('curriculo-de-pernambucos/destroy', 'CurriculoDePernambucoController@massDestroy')->name('curriculo-de-pernambucos.massDestroy');
+    Route::resource('curriculo-de-pernambucos', 'CurriculoDePernambucoController');
+
+	    // Fornecedores
+    Route::delete('fornecedores/destroy', 'FornecedoresController@massDestroy')->name('fornecedores.massDestroy');
+    Route::resource('fornecedores', 'FornecedoresController');
+
+    // Categorias De Produtos
+    Route::delete('categorias-de-produtos/destroy', 'CategoriasDeProdutosController@massDestroy')->name('categorias-de-produtos.massDestroy');
+    Route::resource('categorias-de-produtos', 'CategoriasDeProdutosController');
+
+    // Produtos
+    Route::delete('produtos/destroy', 'ProdutosController@massDestroy')->name('produtos.massDestroy');
+    Route::resource('produtos', 'ProdutosController');
+
+    // Requisitantes
+    Route::delete('requisitantes/destroy', 'RequisitantesController@massDestroy')->name('requisitantes.massDestroy');
+    Route::resource('requisitantes', 'RequisitantesController');
+
+    // Estoques
+    Route::delete('estoques/destroy', 'EstoquesController@massDestroy')->name('estoques.massDestroy');
+    Route::resource('estoques', 'EstoquesController');
+
+    // Entrada No Estoque
+    Route::delete('entrada-no-estoques/destroy', 'EntradaNoEstoqueController@massDestroy')->name('entrada-no-estoques.massDestroy');
+    Route::resource('entrada-no-estoques', 'EntradaNoEstoqueController');
+
+    // Saida No Estoque
+    Route::delete('saida-no-estoques/destroy', 'SaidaNoEstoqueController@massDestroy')->name('saida-no-estoques.massDestroy');
+    Route::resource('saida-no-estoques', 'SaidaNoEstoqueController');
+
+    // Requisicoes
+    Route::delete('requisicos/destroy', 'RequisicoesController@massDestroy')->name('requisicos.massDestroy');
+	Route::get('requisicos/situacao/up', 'RequisicoesController@upSituacao')->name('requisicos.situacao-up');
+	Route::get("requisicos/situacao", "RequisicoesController@situacao")->name("requisicos.situacao");
+    Route::resource('requisicos', 'RequisicoesController');
+
+    // Pedidos De Compra
+    Route::delete('pedidos-de-compras/destroy', 'PedidosDeCompraController@massDestroy')->name('pedidos-de-compras.massDestroy');
+	Route::get('pedidos-de-compras/situacao/up', 'PedidosDeCompraController@upSituacao')->name('pedidos-de-compras.situacao-up');
+	Route::get("pedidos-de-compras/situacao", "PedidosDeCompraController@situacao")->name("pedidos-de-compras.situacao");
+    Route::resource('pedidos-de-compras', 'PedidosDeCompraController');
+
+	// Relatorios Do Almoxarifado
+    Route::delete('relatorios-do-almoxarifados/destroy', 'RelatoriosDoAlmoxarifadoController@massDestroy')->name('relatorios-do-almoxarifados.massDestroy');
+    Route::get('relatorios-do-almoxarifados', 'RelatoriosDoAlmoxarifadoController@index')->name("relatorios-do-almoxarifados.index");
+	Route::get('relatorios-do-almoxarifados/fornecedores', "RelatoriosDoAlmoxarifadoController@fornecedores")->name("relatorios-do-almoxarifados.fornecedores");
+	Route::get('relatorios-do-almoxarifados/requisitantes', "RelatoriosDoAlmoxarifadoController@requisitantes")->name("relatorios-do-almoxarifados.requisitantes");
+	Route::get('relatorios-do-almoxarifados/estoques', "RelatoriosDoAlmoxarifadoController@estoques")->name("relatorios-do-almoxarifados.estoques");
+	Route::get('relatorios-do-almoxarifados/produtos', "RelatoriosDoAlmoxarifadoController@produtos")->name("relatorios-do-almoxarifados.produtos");
+	Route::get('relatorios-do-almoxarifados/entrada-no-estoques', "RelatoriosDoAlmoxarifadoController@entradas")->name("relatorios-do-almoxarifados.entradas");
+	Route::get('relatorios-do-almoxarifados/saida-no-estoques', "RelatoriosDoAlmoxarifadoController@saidas")->name("relatorios-do-almoxarifados.saidas");
+	Route::get('relatorios-do-almoxarifados/requisicoes', "RelatoriosDoAlmoxarifadoController@requisicos")->name("relatorios-do-almoxarifados.requisicos");
+	Route::get('relatorios-do-almoxarifados/pedidos-de-compras', "RelatoriosDoAlmoxarifadoController@pedidos")->name("relatorios-do-almoxarifados.pedidos");
+
+
+    Route::get('team-members', 'TeamMembersController@index')->name('team-members.index');
+    Route::post('team-members', 'TeamMembersController@invite')->name('team-members.invite');
+});
+Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
+    // Change password
+    if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
+        Route::get('password', 'ChangePasswordController@edit')->name('password.edit');
+        Route::post('password', 'ChangePasswordController@update')->name('password.update');
+        Route::post('profile', 'ChangePasswordController@updateProfile')->name('password.updateProfile');
+        Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
+    }
+});

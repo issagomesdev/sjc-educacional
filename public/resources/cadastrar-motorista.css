@@ -1,0 +1,105 @@
+
+.table td, .table th {
+    font-size: 0.8125rem;
+    white-space: none !important;
+}
+
+div.dataTables_scrollBody table {
+    border-top: none;
+    margin-top: 1px !important;
+    margin-left: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+}
+
+table.dataTable tbody td {
+    padding: 50px 15px;
+}
+
+.btn-left, .btn-right {
+    position: absolute;
+    top: 2.5em;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 1px 1px 0px 10px;
+    border-bottom: 0px solid #111;
+}
+
+.btn-right {
+    right: 0;
+    margin-right: -30px;
+}
+
+div.dataTables_scrollBody {
+    overflow: hidden !important;
+}
+
+.dshow {
+display: block !important;
+position: absolute !important;
+margin-top: -20px;
+right: 30px;
+background-color: #f9f9f9;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+/* p */
+
+@media (min-width: 300px) and (max-width: 455px) {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -200px !important;
+  }
+
+}
+
+@media (min-width: 456px) and (max-width: 490px) {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -280px !important;
+  }
+
+}
+
+@media (min-width: 491px) and (max-width: 600px)  {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -310px !important;
+  }
+
+}
+
+@media (min-width: 601px) and (max-width: 700px)  {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -420px !important;
+  }
+
+}
+
+@media (min-width: 701px) {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -520px !important;
+  }
+
+}

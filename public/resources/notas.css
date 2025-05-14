@@ -1,0 +1,325 @@
+
+.card1 {
+    position: relative;
+    display: -ms-flexbox;
+    display: block;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0px solid;
+    border-radius: .25rem;
+    background-color: #fff;
+    border-color: #d8dbe0;
+}
+
+.card2 {
+    position: relative;
+    display: -ms-flexbox;
+    display: block;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0px solid;
+    border-radius: .25rem;
+    background-color: #fff;
+    border-color: #d8dbe0;
+}
+
+.card3 {
+    position: relative;
+    display: -ms-flexbox;
+    display: block;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+      margin-left: 1rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0px solid;
+    border-radius: .25rem;
+    background-color: #fff;
+    border-color: #d8dbe0;
+}
+
+.form-control {
+    display: block;
+    width: 99%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid;
+    color: #768192;
+    background-color: #fff;
+    border-color: #d8dbe0;
+    border-radius: 0rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control2 {
+    display: block;
+    width: 99%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid;
+    color: #768192;
+    background-color: #fff;
+    border-color: #d8dbe0;
+    border-radius: 0rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.form-btn {
+    margin-top:0.2rem;
+    margin-left: 1rem;
+}
+
+.table-responsive {
+    margin: 10px 0px 0px 0px;
+}
+
+.select2 {
+    max-width: 100%;
+    width: 100% !important;
+}
+
+.contein1 {
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.contein2 {
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.contein3 {
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+html:not([dir=rtl]) .form-check-input {
+    margin-left: 1.2px;
+}
+
+input.btn.btn-import {
+    color: #fff;
+    background-color: #2eb85c;
+    border-color: #2eb85c;
+}
+
+input.btn.btn-edit {
+    color: #fff;
+    background-color: #ffd84a;
+    border-color: #ffd84a;
+}
+
+input.btn.btn-view {
+    color: #fff;
+    background-color: #39f;
+    border-color: #39f;
+}
+
+label.menssg {
+    width: 700px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contentlab {
+    background: #d8dbe0b8;
+    height: 200px;
+}
+
+header.menssg, nav {
+  text-align: center;
+  background: #dde0e4;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+label.required {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #585858 !important;
+    font-weight: 600;
+}
+
+/* container-fluid */
+
+@media (min-width: 320px) and (max-width: 590px){
+  .container-fluid[data-ativo='close'] {
+      width: 95% !important;
+      margin-right: auto;
+      margin-left: 0px !important;
+      margin-top: 9rem;
+      transition: all 0.5s ease;
+  }
+
+.container-fluid[data-ativo='open'] {
+    width: 95% !important;
+    margin-right: auto;
+    margin-left: -10px !important;
+    margin-top: 9rem;
+    transition: all 0.5s ease;
+}
+
+.contein4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card2 {
+    width: 100%;
+}
+
+.card3{
+    width: 100%;
+}
+
+.card3 {
+    margin-left: 0;
+}
+
+.contein4 {
+    flex-wrap: wrap;
+}
+
+}
+
+@media (min-width: 591px) and (max-width: 1023px){
+
+  .container-fluid[data-ativo='close'] {
+    width: 100% !important;
+    margin-right: auto;
+    margin-left: -10px !important;
+    margin-top: 9rem;
+    transition: all 0.5s ease;
+}
+
+.container-fluid[data-ativo='open'] {
+    width: 100% !important;
+    margin-right: auto;
+    margin-left: -10px !important;
+    margin-top: 9rem;
+    transition: all 0.5s ease;
+}
+
+.card2 {
+    width: 100%;
+}
+
+.card3{
+    width: 100%;
+}
+
+.contein4 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+.container-fluid[data-ativo='close'] {
+    width: 100% !important;
+    margin-right: auto;
+    margin-left: 0 !important;
+    margin-top: 9rem;
+    transition: all 0.5s ease;
+  }
+
+  .container-fluid[data-ativo='open'] {
+      width: 100% !important;
+      margin-right: auto;
+      margin-left: -15px !important;
+      margin-top: 9rem;
+      transition: all 0.5s ease;
+  }
+
+  .contein4 {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+  }
+
+  .card2 {
+      width: 100%;
+  }
+
+  .card3{
+      width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-fluid[data-ativo='close'] {
+      width: 100% !important;
+      margin-right: auto;
+      margin-left: -10px !important;
+      margin-top: 9rem;
+      transition: all 0.5s ease;
+  }
+
+  .container-fluid[data-ativo='open'] {
+    width: 100% !important;
+    margin-right: auto;
+    margin-left: -10px !important;
+    margin-top: 9rem;
+    transition: all 0.5s ease;
+}
+
+.contein4 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.contein1 {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.card2 {
+    width: 100%;
+}
+
+.card3{
+    width: 100%;
+}
+
+}

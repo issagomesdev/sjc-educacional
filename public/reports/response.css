@@ -1,0 +1,35 @@
+@media only screen
+   and (max-device-width: 1080px) {
+
+     .grapic-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div#example_wrapper {
+    width: 100%;
+}
+
+.grapic-table {
+    display: block;
+}
+
+div#chart {
+    margin-left: -3.1rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+
+div#chart-estudantes {
+  margin-left: -3.1rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+.apexcharts-svg {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 0.15rem;
+    width: 100%;
+}
+
+}

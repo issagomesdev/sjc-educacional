@@ -1,0 +1,230 @@
+
+div#DataTables_Table_0_wrapper {
+overflow: hidden !important;
+}
+
+.container-fluid {
+    margin-top: 9rem;
+}
+
+.dataTables_scrollHead {
+    width: 0px;
+    height: 0px;
+}
+
+.btn-left, .btn-right {
+    position: absolute;
+    top: 0px !important;
+}
+
+.btn-submit {
+width: 200px;
+height: 30px;
+margin-left: -10px;
+background-color: transparent;
+border: none;
+}
+
+a.btn.buttons-collection.buttons-colvis.btn-default {
+padding: 0px 0px 0px 0px;
+width: 0%;
+opacity: 0%;
+margin: 210px 0px 0px 0px;
+position: absolute;
+}
+
+a.btn.btn-xs.btn-m {
+color: #fff;
+background-color: #5cc975;
+border-color: #5cc975;
+height: 25px;
+}
+
+button.btn.btn-m {
+color: #fff;
+background-color: #5cc975;
+border-color: #5cc975;
+}
+
+a.c-sidebar-nav-link {
+color: #000000c7;
+}
+
+.card-top {
+-ms-flex: 1 1 auto;
+flex: 1 1 auto;
+flex-wrap: wrap;
+min-height: 1px;
+padding: 1.25rem;
+display: flex;
+}
+
+a.c-sidebar-nav-link.c-active {
+color: #2eb85c;
+}
+
+.btn-publi {
+color: #fff;
+background-color: #2eb85c;
+border-color: #2eb85c;
+}
+
+.btn-xpubli {
+color: #fff;
+background-color: #dc3545;
+border-color: #dc3545;
+}
+
+.btn-xaprov {
+color: #fff;
+background-color: #dc3545;
+border-color: #dc3545;
+}
+
+.btn-danger {
+display: none;
+}
+
+.table td, .table th {
+font-size: 0.8125rem;
+white-space: none !important;
+}
+
+div.dataTables_scrollBody table {
+border-top: none;
+margin-top: 1px !important;
+margin-left: 10px !important;
+margin-bottom: 0 !important;
+}
+
+.dropdown {
+position: absolute;
+display: inline-block;
+left: 0;
+}
+
+table.dataTable tbody td {
+    padding: 60px 15px !important;
+}
+
+p {
+margin-top: 5px;
+margin-bottom: -2px;
+margin-right: -200px !important;
+}
+
+.dshow {
+display: block !important;
+position: absolute !important;
+margin-top: -50px;
+right: 30px;
+background-color: #f9f9f9;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+.btn-left, .btn-right {
+position: absolute;
+top: 2.5em;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+padding: 1px 1px 0px 10px;
+border-bottom: 0px solid #111;
+}
+
+.btn-right {
+right: 0;
+margin-right: -20px;
+}
+
+div.dataTables_scrollBody {
+overflow: hidden !important;
+}
+
+form {
+display: flex;
+flex-wrap: wrap;
+}
+
+/* form */
+@media (min-width: 50px) and (max-width: 579px) {
+
+.row {
+margin: 0px 0px 10px 0px !important;
+}
+
+.form-group {
+margin-bottom: 1rem !important;
+margin-left: 0.5rem;
+}
+
+}
+
+@media (min-width: 580px) {
+
+.row {
+margin: 34px 0px 10px 0px !important;
+}
+
+.form-group {
+margin-bottom: 1.5rem !important;
+margin-left: 0.5rem;
+}
+
+}
+
+.form-group {
+margin-bottom: 1rem;
+padding-left: 4px;
+}
+
+label {
+display: inline-block;
+margin-bottom: .1rem;
+}
+
+.card-a {
+margin-left: auto;
+margin-right: auto;
+width: 90%;
+position: relative;
+display: -ms-flexbox;
+display: flex;
+}
+
+.card-b {
+width: 80%;
+height: 4rem;
+position: relative;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-direction: column;
+flex-direction: column;
+min-width: 0;
+margin-bottom: 0.8rem;
+padding-left: 9rem;
+word-wrap: break-word;
+background-clip: border-box;
+border: 1px solid;
+border-radius: .25rem;
+background-color: #fff;
+border-color: #d8dbe0;
+margin-left: auto;
+margin-right: 5px;
+}
+
+.card-top-b {
+-ms-flex: 1 1 auto;
+flex: 1 1 auto;
+min-height: 1px;
+padding: 0.5rem;
+display: flex;
+}
+
+.iconxs {
+margin-left: 8rem;
+margin-right: auto;
+}

@@ -1,0 +1,69 @@
+<?php
+
+namespace App\Models;
+
+use \DateTimeInterface;
+use App\Traits\Auditable;
+use App\Traits\MultiTenantModelTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class EntradaNoEstoque extends Model
+{
+    use SoftDeletes;
+    use MultiTenantModelTrait;
+    use Auditable;
+    use HasFactory;
+
+    public $table = 'entrada_no_estoques';
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    protected $fillable = [
+        'estoque_id',
+        'produto_id',
+        'quatidade',
+        'fornecedor_id',
+        'assinatura_id',
+        'team_id',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    public function estoque()
+    {
+        return $this->belongsTo(Estoque::class, 'estoque_id');
+    }
+
+
+    public function produto()
+    {
+        return $this->belongsTo(Produto::class, 'produto_id');
+    }
+
+    public function fornecedor()
+    {
+        return $this->belongsTo(Fornecedore::class, 'fornecedor_id');
+    }
+
+    public function assinatura()
+    {
+        return $this->belongsTo(User::class, 'assinatura_id');
+    }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class, 'team_id');
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
+    }
+}

@@ -1,0 +1,361 @@
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+[data-tooltip]:before,
+[data-tooltip]:after {
+  line-height: 1;
+  font-size: .9em;
+  pointer-events: none;
+  position: absolute;
+  box-sizing: border-box;
+  display: none;
+  opacity: 0;
+}
+[data-tooltip]:before {
+  content: "";
+  border: 5px solid transparent;
+  z-index: 100;
+}
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  text-align: center;
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 6px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #3D3D3D;
+  z-index: 99;
+}
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  display: block;
+  opacity: 1;
+}
+[data-tooltip]:not([data-flow])::before,
+[data-tooltip][data-flow="top"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #FFFFFF;
+}
+[data-tooltip]:not([data-flow])::after,
+[data-tooltip][data-flow="top"]::after {
+  bottom: calc(100% + 5px);
+}
+[data-tooltip]:not([data-flow])::before, [tooltip]:not([data-flow])::after,
+[data-tooltip][data-flow="top"]::before,
+[data-tooltip][data-flow="top"]::after {
+  left: 50%;
+  -webkit-transform: translate(-50%, -4px);
+          transform: translate(-50%, -4px);
+}
+[data-tooltip][data-flow="bottom"]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #FFFFFF;
+}
+[data-tooltip][data-flow="bottom"]::after {
+  top: calc(100% + 5px);
+}
+[data-tooltip][data-flow="bottom"]::before, [data-tooltip][data-flow="bottom"]::after {
+  left: 50%;
+  -webkit-transform: translate(-50%, 8px);
+          transform: translate(-50%, 8px);
+}
+[data-tooltip][data-flow="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #FFFFFF;
+  left: calc(0em - 5px);
+  -webkit-transform: translate(-8px, -50%);
+          transform: translate(-8px, -50%);
+}
+[data-tooltip][data-flow="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  -webkit-transform: translate(-8px, -50%);
+          transform: translate(-8px, -50%);
+}
+[data-tooltip][data-flow="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #FFFFFF;
+  right: calc(0em - 5px);
+  -webkit-transform: translate(8px, -50%);
+          transform: translate(8px, -50%);
+}
+[data-tooltip][data-flow="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  -webkit-transform: translate(8px, -50%);
+          transform: translate(8px, -50%);
+}
+[data-tooltip=""]::after, [data-tooltip=""]::before {
+  display: none !important;
+}
+
+button.btn.btn-check {
+    color: #fff;
+    background-color: #77cb65;
+    border-color: #77cb65;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+button.btn.btn-for {
+    color: #fff;
+    background-color: #ffd84a;
+    border-color: #ffd84a;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+button.d {
+    color: #fff;
+    background-color: #e55353;
+    border-color: #e55353;
+}
+
+button.a {
+    color: #fff;
+    background-color: #2eb85c;
+    border-color: #2eb85c;
+}
+
+.btn {
+    margin-left: 0px;
+}
+
+.axd {
+    display: flex;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: -0.5rem;
+}
+
+.btn-prosp {
+    color: white;
+    background-color: #ffd84a;
+    border-color: #ffd84a;
+}
+
+table.dataTable tbody td.btnn {
+    padding-right: 5000px;
+    padding-left: 300px;
+    padding-top: 50px;
+}
+
+.btn-submit {
+width: 200px;
+height: 30px;
+margin-left: -15px;
+background-color: transparent;
+border: none;
+}
+
+a.btn.buttons-collection.buttons-colvis.btn-default {
+padding: 0px 0px 0px 0px;
+width: 0%;
+opacity: 0%;
+margin: 210px 0px 0px 0px;
+position: absolute;
+}
+
+a.btn.btn-xs.btn-m {
+color: #fff;
+background-color: #5cc975;
+border-color: #5cc975;
+height: 25px;
+}
+
+button.btn.btn-m {
+color: #fff;
+background-color: #5cc975;
+border-color: #5cc975;
+}
+
+a.c-sidebar-nav-link {
+color: #000000c7;
+}
+
+.card-top {
+-ms-flex: 1 1 auto;
+flex: 1 1 auto;
+min-height: 1px;
+padding: 1.25rem;
+display: flex;
+}
+
+a.c-sidebar-nav-link.c-active {
+color: #2eb85c;
+}
+
+.btn-publi {
+color: #fff;
+background-color: #2eb85c;
+border-color: #2eb85c;
+}
+
+.btn-xpubli {
+color: #fff;
+background-color: #dc3545;
+border-color: #dc3545;
+}
+
+.btn-xaprov {
+color: #fff;
+background-color: #dc3545;
+border-color: #dc3545;
+}
+
+.btn-danger {
+display: none;
+}
+
+.table td, .table th {
+font-size: 0.8125rem;
+white-space: none !important;
+}
+
+div.dataTables_scrollBody table {
+border-top: none;
+margin-top: 1px !important;
+margin-left: 10px !important;
+margin-bottom: 0 !important;
+}
+
+.dropdown {
+position: absolute;
+display: inline-block;
+left: 0;
+}
+
+table.dataTable tbody td {
+padding: 50px 15px;
+}
+
+div#DataTables_Table_0_wrapper {
+    overflow: hidden !important;
+}
+
+p {
+margin-top: 5px;
+margin-bottom: -2px;
+margin-right: -60px !important;
+}
+
+
+.btn-left, .btn-right {
+position: absolute;
+top: 4.5em;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+padding: 1px 1px 0px 10px;
+border-bottom: 0px solid #111;
+}
+
+.btn-right {
+right: 0;
+margin-right: -20px;
+}
+
+div.dataTables_scrollBody {
+overflow: hidden !important;
+}
+
+.dshow {
+display: block !important;
+position: absolute !important;
+margin-top: 0px;
+right: 30px;
+background-color: #f9f9f9;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+/* p */
+
+@media (min-width: 300px) and (max-width: 455px) {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -60px !important
+  }
+
+  .btn-right {
+    right: 0;
+    margin-right: -31px !important;
+}
+
+}
+
+@media (min-width: 456px) and (max-width: 490px) {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -280px !important;
+  }
+
+}
+
+@media (min-width: 491px) and (max-width: 600px)  {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -310px !important;
+  }
+
+}
+
+@media (min-width: 601px) and (max-width: 700px)  {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -420px !important;
+  }
+
+}
+
+@media (min-width: 701px) {
+
+  p {
+      margin-top: 5px;
+      margin-bottom: -2px;
+      margin-right: -520px !important;
+  }
+
+}
+
+@media (min-width: 821px) and (max-width: 1359px) {
+    .container-fluid {
+        width: 90%;
+        left: -50px;
+      }
+  }
+
+
+    @media (min-width: 1360px) and (max-width: 1700px) {
+        .container-fluid {
+            width: 95%;
+            left: -50px;
+        }
+  }
+
+  @media (min-width: 1701px) {
+      .container-fluid {
+          width: 95%;
+          left: -50px;
+      }
+}

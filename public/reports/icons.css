@@ -1,0 +1,72 @@
+i.icon {
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+}
+
+.lab {
+    position: absolute;
+    font-size: 12px;
+    margin-top: 4.2rem;
+    right: 0;
+    left: 0;
+}
+
+.cards-icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.card-icons {
+    position: relative;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid;
+    border-radius: .25rem;
+    background-color: #fff;
+    border-color: #d8dbe0;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    color: #3c4b64;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #3c4b64bf;
+}
+
+.container-fluid[data-ativo='close'] {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 12rem;
+    transition: all 0.5s ease;
+}
+
+.container-fluid[data-ativo='open'] {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 12rem;
+    transition: all 0.5s ease;
+}

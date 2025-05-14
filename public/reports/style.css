@@ -1,0 +1,142 @@
+
+.send {
+    margin-top: 18.5px;
+    margin-left: 5px;
+}
+
+.card-select {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selecionar {
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+.table-div {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.grapic-table {
+    display: flex;
+}
+
+      th.sorting.sorting_desc {
+    padding: 6px;
+}
+
+      .table {
+    width: 50%;
+    margin-bottom: 1rem;
+    color: #4f5d73;
+}
+
+      .role {
+    display: inline-flex;
+     }
+
+     .type {
+   display: inline-flex;
+    }
+
+      .cards-icons {
+          display: flex;
+      }
+
+      .lab {
+          padding-top: 5px;
+      }
+
+      .card-body {
+          -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+          min-height: 1px;
+          padding: 1.25rem;
+          text-align: center;
+      }
+
+      .card-icons {
+          position: relative;
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+          width: 10rem;
+          height: 12rem;
+          margin-bottom: 1.5rem;
+          word-wrap: break-word;
+          background-clip: border-box;
+          border: 1px solid;
+          border-radius: .25rem;
+          background-color: #fff;
+          border-color: #d8dbe0;
+      }
+
+      a {
+          text-decoration: none;
+          background-color: transparent;
+          color: #3c4b64;
+      }
+
+      a:hover {
+          text-decoration: none;
+          color: #3c4b64bf;
+      }
+
+      div#example_wrapper {
+          width: 67%;
+      }
+
+      .apexcharts-svg {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 0.15rem;
+      width: 30rem;
+      }
+
+      div#chart {
+      margin-left: -16rem;
+      margin-top: 6rem;
+      margin-bottom: 2rem;
+  }
+
+      table.dataTable thead .noSorting.sorting:before {
+          display: none;
+      }
+
+      table.dataTable thead .noSorting.sorting:after {
+          display: none;
+      }
+
+      th.noSorting.sorting {
+          pointer-events: none;
+      }
+
+      a.btn.btn-danger {
+          display: none;
+      }
+
+      th.select-checkbox.sorting_disabled {
+          display: none;
+      }
+
+      td.select {
+          display: none;
+      }
+
+      td.select-checkbox {
+          display: none;
+      }
+
+      a.btn.buttons-select-all.btn-primary {
+          display: none;
+      }
+
+      a.btn.buttons-select-none.btn-primary.disabled {
+          display: none;
+      }
+
+      a.btn.buttons-collection.buttons-colvis.btn-default {
+          display: none;
+      }

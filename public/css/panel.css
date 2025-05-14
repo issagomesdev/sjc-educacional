@@ -1,0 +1,252 @@
+/* body */
+
+*, *:after, *:before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+margin: 0;
+outline: 0 none;
+padding: 0;
+}
+
+.menu {
+cursor: pointer;
+padding: 15px;
+max-height: 100px;
+overflow: hidden;
+
+}
+
+.menu .line {
+height: 3px;
+display: block;
+width: 3px;
+background: #FFF;
+box-shadow: 0 1px 3px #000;
+margin: 2px;
+opacity: 1;
+transition: all 500ms ease;
+}
+
+.menu.active .line:nth-child(1) {
+height: 1000px;
+width: 250px;
+margin: -20px;
+box-shadow: 0 0 0 rgba(1, 1, 1, 0);
+}
+.menu.active .line:nth-child(2),
+.menu.active .line:nth-child(3) {
+opacity: 0;
+}
+.nav {
+padding: 20px;
+}
+.menu:not(.active) .nav li {
+opacity: 0;
+margin-bottom: -10px;
+}
+.menu .nav li {
+opacity: 1;
+font-size: 16px;
+margin-bottom: 20px;
+transition: opacity 500ms ease, margin-bottom 500ms ease, padding-left 250ms ease;
+}
+.menu .nav li:hover {
+padding-left: 5px;
+}
+
+table.dataTable tbody td {
+padding: 20px 15px;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: -2px;
+    margin-right: -250px;
+}
+
+p.esc {
+    margin-top: 5px;
+    margin-bottom: -2px;
+    margin-right: -500px;
+}
+
+
+p.bn {
+margin-top: 2px;
+margin-bottom: -1px;
+margin-right: 0px;
+}
+
+input.btn.btn-xs.btn-danger {
+margin-left: px;
+}
+
+.btn {
+margin-left: -10px;
+}
+
+img {
+    margin-left: 2px;
+    width: 70px;
+    height: auto;
+}
+
+p {
+font-size: 14px;
+}
+
+p.cad {
+font-size: 9px;
+opacity: 50%;
+}
+
+p.esc {
+font-size: 12px;
+}
+
+
+strong.e {
+    color: white;
+    background-color: #3399ff;
+    padding: 0px 5px 0px 5px;
+  }
+
+strong.t {
+  color: white;
+  background-color: #e55353;
+  padding: 0px 5px 0px 5px;
+  margin: 4px;
+  }
+
+
+  table.dataTable tbody td.invisib {
+      padding: 0px 400px;
+  }
+
+
+table.dataTable tbody td.menu {
+padding: 0px 0px;
+
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>td {
+vertical-align: top;
+}
+
+.row {
+    margin: 0px 10px 10px 0px;
+}
+
+
+button.btn.btn-warning {
+    margin: 5px;
+}
+
+.menu {
+    cursor: pointer;
+    padding: 0px;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+tbody {
+    flex: 2;
+}
+
+table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting {
+  padding: 0px;
+  opacity: 0%;
+  pointer-events: none;
+  width: 0px !important;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 0px 0px;
+
+}
+
+a.btn.buttons-copy.buttons-html5.btn-default {
+    display: none;
+}
+
+th.sorting {
+    width: 00px;
+}
+
+.table-bordered, .table-bordered td, .table-bordered th {
+  border: 0px solid;
+  border-color: #d8dbe0;
+}
+
+
+table.dataTable thead th {
+    border-bottom: 0px solid #c8ced3;
+
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin: 30px 10px 10px 10px;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 1px 1px 20px 10px;
+    border-bottom: 0px solid #111;
+}
+
+.dataTables_scrollHead {
+    overflow: hidden !important;
+    overflow-x: auto !important;
+    position: relative;
+    border: 0px;
+    width: 100%;
+    height: 115px;
+}
+
+.dataTables_scrollHead::-webkit-scrollbar {
+  width: 5px;
+}
+
+div.dataTables_scrollBody {
+    overflow: hidden !important;
+}
+
+td.invisib {
+    display: none;
+}
+
+.datatable {
+    width: 0% !important;
+}
+
+td.d {
+    display: none;
+}
+
+table.dataTable tbody td.btnn {
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-top: 60px;
+}
+
+table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected {
+    background-color: #b0bed900;
+}
+
+.table tbody tr:focus {
+    outline: 0;
+    color: #4f5d73;
+    background-color: transparent !important;
+}
+
+.table-hover tbody tr:hover {
+    color: #4f5d73;
+    background-color: transparent !important;
+}
+
+p.fil {
+    margin-bottom: 5px;
+    margin-right: 1px !important;
+    font-weight: 600;
+}
